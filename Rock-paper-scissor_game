@@ -1,0 +1,29 @@
+import random
+
+items = ["Rock", "Paper", "Scissors"]
+
+user = input("Enter your option (Rock, Paper, Scissors): ").capitalize()
+while user not in items:
+    user = input("Invalid input. Please enter Rock, Paper, or Scissors: ").capitalize()
+
+comp = random.choice(items)
+
+print(f"Your choice: {user}, Computer's choice: {comp}")
+
+if user == comp:
+    print("Both are the same, so the match is a tie.")
+elif user == "Rock":
+    if comp == "Paper":
+        print("Paper covers Rock, so the Computer wins.")
+    else:
+        print("Rock smashes Scissors, so you win.")
+elif user == "Paper":
+    if comp == "Scissors":
+        print("Scissors cut Paper, so the Computer wins.")
+    else:
+        print("Paper covers Rock, so you win.")
+elif user == "Scissors":
+    if comp == "Rock":
+        print("Rock smashes Scissors, so the Computer wins.")
+    else:
+        print("Scissors cut Paper, so you win.")
